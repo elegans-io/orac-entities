@@ -1,5 +1,3 @@
-import NativePackagerHelper._
-
 name := "Orac Entities"
 
 organization := "io.elegans"
@@ -14,13 +12,7 @@ libraryDependencies ++= {
   val AkkaHttpVersion   = "10.1.0"
   Seq(
     "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
-    "com.typesafe.akka" %% "akka-testkit" % AkkaVersion,
-    "com.typesafe.akka" %% "akka-typed" % AkkaVersion,
-    "com.typesafe.akka" %% "akka-contrib" % AkkaVersion,
-    "com.typesafe.akka" %% "akka-http-core" % AkkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-spray-json" % AkkaHttpVersion,
-    "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion,
     "org.scalaz" %% "scalaz-core" % "7.2.18"
   )
 }
@@ -29,12 +21,10 @@ scalacOptions += "-deprecation"
 scalacOptions += "-feature"
 //scalacOptions += "-Ylog-classpath"
 
-enablePlugins(GitVersioning)
 enablePlugins(GitBranchPrompt)
-enablePlugins(JavaServerAppPackaging)
+enablePlugins(GitVersioning)
 enablePlugins(UniversalPlugin)
 
 git.useGitDescribe := true
 
 licenses := Seq(("GPLv2", url("https://www.gnu.org/licenses/old-licenses/gpl-2.0.md")))
-
