@@ -41,7 +41,7 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-pomExtra := (
+pomExtra :=
   <url>https://github.com/elegans-io/orac-entities</url>
     <licenses>
       <license>
@@ -60,6 +60,9 @@ pomExtra := (
         <name>Angelo Leto</name>
         <url>http://www.elegans.io</url>
       </developer>
-    </developers>)
+    </developers>
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".sonatype_credentials")
 
 licenses := Seq(("GPLv2", url("https://www.gnu.org/licenses/old-licenses/gpl-2.0.md")))
+
