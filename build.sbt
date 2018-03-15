@@ -41,28 +41,23 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-pomExtra :=
-  <url>https://github.com/elegans-io/orac-entities</url>
-    <licenses>
-      <license>
-        <name>GPLv2</name>
-        <url>https://www.gnu.org/licenses/old-licenses/gpl-2.0.md</url>
-        <distribution>repo</distribution>
-      </license>
-    </licenses>
-    <scm>
-      <url>git@github.com:elegans-io/orac-entities.git</url>
-      <connection>scm:git:git@github.com:elegans-io/orac-entities.git</connection>
-    </scm>
-    <developers>
-      <developer>
-        <id>angleto</id>
-        <name>Angelo Leto</name>
-        <url>http://www.elegans.io</url>
-      </developer>
-    </developers>
+homepage := Some(url("http://www.elegans.io"))
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".sonatype_credentials")
+scmInfo := Some(
+  ScmInfo(
+    url("https://github.com/elegans-io/orac-entities"),
+    "scm:git@github.com:elegans-io/orac-entities.git"
+  )
+)
+
+developers := List(
+  Developer(
+    id    = "angleto",
+    name  = "Angelo Leto",
+    email = "angelo.leto@elegans.io",
+    url   = url("http://www.elegans.io")
+  )
+)
 
 licenses := Seq(("GPLv2", url("https://www.gnu.org/licenses/old-licenses/gpl-2.0.md")))
 
