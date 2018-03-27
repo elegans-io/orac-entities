@@ -10,8 +10,8 @@ case class Item (
                   category: String,
                   description: Option[String] = Option.empty,
                   props: Option[OracProperties] = Option.empty
-)
+                )
 
 case class Items (
-                 items: List[Item]
-                )
+                   items: List[Item]
+                 )

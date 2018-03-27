@@ -32,6 +32,7 @@ trait OracJsonSupport extends SprayJsonSupport with DefaultJsonProtocol {
   implicit val itemPropertiesFormat = jsonFormat5(OracProperties)
   implicit val updateItemFormat = jsonFormat4(UpdateItem)
   implicit val itemFormat = jsonFormat5(Item)
+  implicit val itemSearchFormat = jsonFormat9(ItemSearch)
   implicit val itemListFormat = jsonFormat1(Items)
   implicit val updateOracUserFormat = jsonFormat4(UpdateOracUser)
   implicit val oracUserFormat = jsonFormat5(OracUser)
