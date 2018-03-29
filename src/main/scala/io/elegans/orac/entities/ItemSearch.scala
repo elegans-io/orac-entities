@@ -4,13 +4,11 @@ package io.elegans.orac.entities
   * Created by Angelo Leto <angelo.leto@elegans.io> on 27/03/18.
   */
 
-case class ItemSearch(from: Option[Int],
-                      size: Option[Int],
-                      min_score: Option[Float] = Option.empty,
-                      id: Option[String] = Option.empty,
+case class ItemSearch(
                       name: Option[String] = Option.empty,
                       category: Option[String] = Option.empty,
                       description: Option[String] = Option.empty,
-                      props: Option[OracProperties] = Option.empty,
-                      random: Option[Boolean] = Option.empty
+                      random: Option[Boolean] = Option.empty,
+                      timestamp_from: Option[Long] = Option.empty, /** item timestamp: from */
+                      timestamp_to: Option[Long] = Option.empty /** item timestamp: to */
                      )

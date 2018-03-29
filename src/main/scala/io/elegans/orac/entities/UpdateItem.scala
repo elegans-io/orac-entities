@@ -8,5 +8,6 @@ case class UpdateItem (
                         name: Option[String] = Option.empty,
                         category: Option[String] = Option.empty,
                         description: Option[String] = Option.empty,
-                        props: Option[OracProperties] = Option.empty
-)
+                        props: Option[OracProperties] = Option.empty,
+                        timestamp: Option[Long] = Option.empty
+                      )

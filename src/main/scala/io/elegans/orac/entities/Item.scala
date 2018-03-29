@@ -9,7 +9,8 @@ case class Item (
                   name: String,
                   category: String,
                   description: Option[String] = Option.empty,
-                  props: Option[OracProperties] = Option.empty
+                  props: Option[OracProperties] = Option.empty,
+                  timestamp: Option[Long] = Option.empty /** Item timestamp, generated on insert */
                 )
 
 case class Items (
