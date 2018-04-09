@@ -5,7 +5,7 @@ package io.elegans.orac.entities
   */
 
 case class Recommendation(
-                           id: Option[String], /** the recommendation id */
+                           id: Option[String] = Option.empty, /** the recommendation id */
                            user_id: String,
                            item_id: String,
                            algorithm: String, /** algorithm name */
