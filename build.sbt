@@ -32,8 +32,10 @@ publishTo := {
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+    Some("releases"  at nexus + "service/local/staging/deploy/maven3")
 }
+
+releaseCrossBuild := true
 
 publishMavenStyle := true
 
@@ -57,6 +59,12 @@ developers := List(
     email = "angelo.leto@elegans.io",
     url   = url("http://www.elegans.io")
   )
+)
+
+releaseProcess := Seq[ReleaseStep](
+                releaseStepCommand("sonatypeOpen \"io.elegans\" \"orac-entities\""),
+                releaseStepCommand("publishSigned"),
+                releaseStepCommand("sonatypeRelease")
 )
 
 licenses := Seq(("GPLv2", url("https://www.gnu.org/licenses/old-licenses/gpl-2.0.md")))
